@@ -44,6 +44,10 @@ App.post("/api/sendotp",(req,res)=>{
         name : req.body.item.name,
         otp: OTP
     }
+    users.findOneAndRemove({"email":user.email})
+    .then(()=>{
+        console.log("Removed old duplicate entry")
+    })
     
     let mailTransporter = nodemailer.createTransport({
         service: 'gmail',
