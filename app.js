@@ -11,7 +11,7 @@ let port = 3000;
 const App = new express();
 
 
-App.listen(port || process.env.port, (err)=>{
+App.listen(port || process.env.PORT, (err)=>{
     if(err)
     console.log(err)
     else
