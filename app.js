@@ -3,6 +3,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const nodemailer = require('nodemailer');
 const path = require('path');
+const { config } = require("dotenv");
+
+require("dotenv").config();
+
 
 
 var users = require("./src/model/user")
@@ -52,8 +56,8 @@ App.post("/api/sendotp",(req,res)=>{
     let mailTransporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: "inconspicuouscreature@gmail.com",
-            pass: "qodkocdczgaucvki"
+            user: process.env.USER,
+            pass: process.env.PASS
           }
     });
     let mailDetails = {
