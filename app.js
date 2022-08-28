@@ -56,8 +56,8 @@ App.post("/api/sendotp",(req,res)=>{
     let mailTransporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.USER,
-            pass: process.env.PASS
+            user: "inconspicuouscreature@gmail.com",
+            pass: "qodkocdczgaucvki"
           }
     });
     let mailDetails = {
